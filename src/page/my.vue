@@ -8,10 +8,7 @@
 import Footer from "../component/Footer";
 export default {
     mounted() {
-        this.$store.commit({
-            type: "changeTab",
-            index: 1,
-        });
+        this.$store.dispatch("footModule/changeTab",1);
     },
     components: {
         Footer,

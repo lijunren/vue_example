@@ -18,13 +18,23 @@ export default {
         }
     },
     mounted() {
-        // console.log(this.$store.state.footModule.currentIndex);
-        this.currentIndex = this.$store.state.footModule.currentIndex
+        // console.log(this.$store.state);
+        this.currentIndex = this.$store.state.footModule.currentIndex;
     },
     methods: {
         changeTab(index,path) {
-            this.$router.push({path});
-            this.currentIndex = index;
+            try{
+                const currPath = window.location.pathname;
+                // console.log(currPath);
+                if (currPath === path) {
+                    return;
+                }
+                this.$router.push({path});
+            } catch(e) {
+                console.log(e);
+            }
+            this.$store.dispatch("footModule/changeTab",index);
+            this.currentIndex = this.$store.state.footModule.currentIndex
         }
     },
     components: {

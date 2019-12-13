@@ -47,10 +47,7 @@ export default {
         }
     },
     mounted() {
-        this.$store.commit({
-            type: "changeTab",
-            index: 0,
-        });
+        this.$store.dispatch("footModule/changeTab",0);
     },
     components: {
         Swipe,

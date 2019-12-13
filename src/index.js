@@ -15,6 +15,7 @@ const store = new Vuex.Store({
     }
 });
 const router = new VueRouter({
+    mode: 'history',
     routes
 });
 const root = document.getElementById("app");
