@@ -4,4 +4,6 @@
 ### 启动项目 npm start 
 ### http://localhost:5000
 
-##### creating a new branch is quick dev
+### build文件
+### npm run build
+
