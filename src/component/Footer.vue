@@ -25,7 +25,7 @@ export default {
         changeTab(index,path) {
             try{
                 const currPath = window.location.pathname;
-                // console.log(currPath);
+                console.log(currPath);
                 if (currPath === path) {
                     return;
                 }

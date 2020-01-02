@@ -5,3 +5,6 @@
     export default {
     }
 </script>
+<style scoped>
+@import url("../static/assets/css/init.css");
+</style>

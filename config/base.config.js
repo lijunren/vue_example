@@ -1,19 +1,17 @@
 const pathlib = require("path");
 const Webpack = require("webpack");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: pathlib.resolve("src/index.js"),
-    mode: "development",
     output: {
-        path: pathlib.resolve("dest"),
-        filename: "bundle.js",
+        path: pathlib.resolve("dist"),
+        filename: "static/js/[hash:8].js",
     },
     resolve: {
         extensions:[ ".vue",".js"]
     },
-    devtool: "source-map",
     module: {
         rules: [
             {
@@ -45,15 +43,15 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        contentBase: pathlib.resolve("static"),
-        port: 5000,
-        hot: true,
-        inline: true,
-        // noInfo: true
-    },
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            title: "惟农+",
+            filename: "index.html",
+            inject: true,
+            template: pathlib.resolve("static/index.html"),
+            favicon: pathlib.resolve("static/favicon.ico"),
+        }),
     ]
 }
