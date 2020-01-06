@@ -1,6 +1,7 @@
 <template>
     <div>
         <p>我的页面</p>
+        <span>脚本测试</span>
         <Footer></Footer>
     </div>
 </template>
